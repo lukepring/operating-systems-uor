@@ -14,6 +14,6 @@ Ubuntu Server is also clearly the best option due to its simple and guided insta
 My workstation is a Macbook Pro with the macOS Tahoe (version 26) operating system installed. This is my primary device, and is good for virtualisation due to the Apple Silicon ARM architecture and Apple's virtualisation and hypervisor frameworks. Due to said CPU architecture, the version of Ubuntu Server I have to install will have to be the ARM64 build due to the performance issues virtualising another CPU architecture would introduce. macOS is part of the UNIX family of operating systems, which has many similarities with Linux. This reduces compatibility issues as a lot of the kernel level features are the same, meaning the virtualised server will be more stable and performant. UNIX-based hosts such as macOS also come with Linux tools such as built-in SSH via the Terminal, which means connecting to the server will be easier, not requiring the installation of PuTTY like on Windows hosts.
 
 ### Network Configuration
-
+TBC
 
 <sup>Cayman Theme by pages-themes used under licence.</sup>
