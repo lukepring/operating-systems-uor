@@ -1,3 +1,1 @@
-# Operating Systems Module - University of Roehampton London
-
-## By Luke Pring
+## Week 1 - System Planning and Distribution Selection
