@@ -1,4 +1,5 @@
 # Operating Systems Module at University of Roehampton
+By Luke Pring (A00012218)
 ## Week 1 - System Planning and Distribution Selection
 ### System Architecture Diagram
 <img src="https://raw.githubusercontent.com/lukepring/operating-systems-uor/refs/heads/main/System%20Diagram.png">
