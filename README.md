@@ -9,4 +9,4 @@ I chose to use the ARM64 version of Ubuntu Server. This is widely adopted in ent
 
 Ubuntu Server is also clearly the best option due to its simple and guided installation process, which is intuitive and requires less manual setup and knowledge to get started. It is designed to be accessible for new Linux users, with beginner-friendly documentation and simple package management. This is in contrast to CentOS Stream or Debian, which require more configuration knowledge with their more complex setup processes. These distributions are more geared towards experienced server administrators, and require more learning than would be possible during the timescale of the coursework.
 
-<small>Cayman Theme by pages-themes used under licence.</small>
+<sup>Cayman Theme by pages-themes used under licence.</sup>
