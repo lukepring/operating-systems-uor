@@ -90,7 +90,7 @@
       height: auto;
       border-radius: 8px;
       border: 1px solid #2d333b;
-      background: #c0c0c0;    
+      background: #0d1117;    
     }
 
     p {
@@ -149,7 +149,7 @@
 
         <h3>System Architecture Diagram</h3>
         <div class="diagram">
-          <img alt="System Architecture Diagram" src="https://raw.githubusercontent.com/lukepring/operating-systems-uor/refs/heads/main/System%20Diagram.png">
+          <img alt="System Architecture Diagram" src="https://raw.githubusercontent.com/lukepring/operating-systems-uor/refs/heads/main/Config%20Diagram.png">
         </div>
 
         <h3>Distribution Selection Justification</h3>
@@ -186,7 +186,9 @@
         </p>
 
         <h3>Network Configuration</h3>
-        <p>When configuring the network connection between my server VM and my workstation, I set up a Host-Only VirtualBox adapter called vboxnet0.</p>
+        <p>When configuring the network connection between my server VM and my workstation, I will use the "Bridged Adapter" option within VirtualBox to ensure the server VM is hosted on the same network, and with the same subnet mask. The bridged option
+          connects the guest network interface to the host's, appearing as a seperate device on the local network. 
+          This allows connection to the guest machine via SSH without requiring port forwarding or NAT to be configured. This means that the server VM can be connected to from the local machine with a local subnet IP.</p>
       </section>
 
       <footer>
