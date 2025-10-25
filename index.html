@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Operating Systems Module at University of Roehampton — Luke Pring</title>
+
+  <style>
+    /* Simple, modern layout inspired by GitHub Pages Cayman theme */
+    :root{
+      --bg: #ffffff;
+      --muted: #586069;
+      --accent: #0366d6;
+      --card-bg: #f6f8fa;
+      --maxw: 880px;
+      --radius: 10px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      line-height: 1.6;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      background: linear-gradient(180deg,#ffffff 0%, #fbfdff 100%);
+      color:#111827;
+    }
+
+    .wrapper{
+      max-width: var(--maxw);
+      margin: 40px auto;
+      padding: 28px;
+    }
+
+    header{
+      border-bottom: 1px solid #e6e6e6;
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+    }
+
+    h1{
+      margin:0 0 6px 0;
+      font-size: 28px;
+      letter-spacing: -0.4px;
+    }
+
+    .byline{
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .meta{
+      color: var(--muted);
+      margin-top: 12px;
+      font-size: 13px;
+    }
+
+    main h2{
+      font-size: 20px;
+      margin-top: 18px;
+      margin-bottom: 10px;
+    }
+
+    main h3{
+      font-size: 16px;
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+
+    .card{
+      background: var(--card-bg);
+      padding: 18px;
+      border-radius: var(--radius);
+      box-shadow: 0 1px 0 rgba(27,31,35,0.04);
+      margin-bottom: 16px;
+    }
+
+    .diagram {
+      display:flex;
+      justify-content:center;
+      margin: 14px 0;
+    }
+    .diagram img{
+      max-width:100%;
+      height:auto;
+      border-radius:6px;
+      border:1px solid #e8eef8;
+      background: #fff;
+    }
+
+    p{ margin-top:0; margin-bottom:12px; color:#222; }
+
+    footer{
+      margin-top: 28px;
+      padding-top: 12px;
+      border-top: 1px solid #eee;
+      color:var(--muted);
+      font-size: 13px;
+    }
+
+    a{
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    /* Responsive tweaks */
+    @media (max-width:560px){
+      .wrapper{ padding:16px; margin:20px auto; }
+      h1{ font-size:22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper" role="main">
+    <header>
+      <h1>Operating Systems Module at University of Roehampton</h1>
+      <div class="byline">By Luke Pring (A00012218)</div>
+      <div class="meta">
+        <a href="https://github.com/lukepring/operating-systems-uor" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="card" aria-labelledby="planning-title">
+        <h2 id="planning-title">System Planning and Distribution Selection</h2>
+        <div class="meta">(24/10/2025)</div>
+
+        <h3>System Architecture Diagram</h3>
+        <div class="diagram">
+          <!-- Diagram referenced from your repository -->
+          <img alt="System Architecture Diagram" src="https://raw.githubusercontent.com/lukepring/operating-systems-uor/refs/heads/main/System%20Diagram.png">
+        </div>
+
+        <h3>Distribution Selection Justification</h3>
+        <p>
+          I chose to use the ARM64 version of Ubuntu Server. This is widely adopted in enterprise for good reason, as it offers a balance of stability and usability.
+          This is important as it would be my first time configuring a Linux server. Ubuntu Server is easy to use, offering strong documentation and simple package management
+          for additional software that may be needed for future tasks of the coursework.
+        </p>
+        <p>
+          This is in comparison to CentOS Stream, another server distribution which requires more manual configuration for installing software packages.
+          Another distribution I considered was Debian, a popular and stable operating system. However, I decided against using Debian as it is less up-to-date,
+          as it has a slower release cycle. In addition, Debian requires more configuration for security, while Ubuntu Server is more automated, speeding up the time
+          it will take to set up my VM.
+        </p>
+        <p>
+          Ubuntu Server is also clearly the best option due to its simple and guided installation process, which is intuitive and requires less manual setup and knowledge to get started.
+          It is designed to be accessible for new Linux users, with beginner-friendly documentation and simple package management. This is in contrast to CentOS Stream or Debian,
+          which require more configuration knowledge with their more complex setup processes.
+        </p>
+        <p>
+          These distributions are more geared towards experienced server administrators, and require more learning than would be possible during the timescale of the coursework.
+        </p>
+
+        <h3>Workstation Configuration</h3>
+        <p>
+          My workstation is a MacBook Pro with the macOS Tahoe (version 26) operating system installed. This is my primary device, and is good for virtualisation due to the Apple Silicon ARM architecture
+          and Apple’s virtualisation and hypervisor frameworks. Due to said CPU architecture, the version of Ubuntu Server I have to install will have to be the ARM64 build due to the performance issues virtualising
+          another CPU architecture would introduce.
+        </p>
+        <p>
+          macOS is part of the UNIX family of operating systems, which has many similarities with Linux. This reduces compatibility issues as a lot of the kernel level features are the same,
+          meaning the virtualised server will be more stable and performant. UNIX-based hosts such as macOS also come with Linux tools such as built-in SSH via the Terminal, which means connecting
+          to the server will be easier, not requiring the installation of PuTTY like on Windows hosts.
+        </p>
+
+        <h3>Network Configuration</h3>
+        <p>TBC</p>
+      </section>
+
+      <footer>
+        Cayman Theme by pages-themes used under licence.<br>
+        <a href="https://github.com/lukepring/operating-systems-uor" target="_blank" rel="noopener">operating-systems-uor</a> is maintained by <a href="https://github.com/lukepring" target="_blank" rel="noopener">lukepring</a>.
+        This page was generated by <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>.
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
