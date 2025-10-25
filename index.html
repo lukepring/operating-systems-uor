@@ -189,6 +189,47 @@
         <p>When configuring the network connection between my server VM and my workstation, I will use the "Bridged Adapter" option within VirtualBox to ensure the server VM is hosted on the same network, and with the same subnet mask. The bridged option
           connects the guest network interface to the host's, appearing as a seperate device on the local network. 
           This allows connection to the guest machine via SSH without requiring port forwarding or NAT to be configured. This means that the server VM can be connected to from the local machine with a local subnet IP.</p>
+
+        <h3>System Specifications</h3>
+        <p>The specifications of my server VM are as follows:
+        <ul>
+          <li><b>uname:</b> Linux</li>
+          <li><b>Total Memory:</b> 1954MB</li>
+          <li><b>Free Memory (idle):</b> 1579MB</li>
+          <li><b>Buff/Cache Memory:</b> 216MB</li>
+          <li><b>df -h: </b><br><pre><code>
+            Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           196M 1004K  195M   1% /run
+efivarfs        256K   16K  241K   6% /sys/firmware/efi/efivars
+/dev/sda2        24G  2.8G   20G  13% /
+tmpfs           978M     0  978M   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/sda1       1.1G  6.4M  1.1G   1% /boot/efi
+tmpfs           196M   12K  196M   1% /run/user/1000
+          </code></pre>
+          </li>
+          <li><b>ip addr: </b><br><pre><code>
+            1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:a5:20:1c brd ff:ff:ff:ff:ff:ff
+    inet 192.168.4.101/22 metric 100 brd 192.168.7.255 scope global dynamic enp0s8
+       valid_lft 13853sec preferred_lft 13853sec
+    inet6 fd94:238e:7224:284b:a00:27ff:fea5:201c/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 1743sec preferred_lft 1743sec
+    inet6 fd79:f176:bc9f:1:a00:27ff:fea5:201c/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591731sec preferred_lft 604531sec
+    inet6 fe80::a00:27ff:fea5:201c/64 scope link 
+       valid_lft forever preferred_lft forever
+          </code></pre></li>
+          <li><b>lsb_release: </b>No LSB modules are available.</li>
+        </ul>
+        I used the <code>uname</code>, <code>free</code>, <code>df -h</code>, <code>ip addr</code>, and <code>lsb_release</code> commands to provide the above system specifications.
+        </p>
       </section>
 
       <footer>
