@@ -132,6 +132,8 @@
       background: #0d1117;    
     }
 
+    
+
     /* Responsive tweaks */
     @media (max-width:560px) {
       .wrapper { padding: 16px; margin: 20px auto; }
@@ -260,8 +262,11 @@ tmpfs           196M   12K  196M   1% /run/user/1000
         </p>
         <h3>Security Configuration Checklist</h3>
         <p>
-          I will edit the SSH configuration file 
+          I will edit the SSH configuration file editing various settings to ensure the security of my VM instance. While the risk of attack is low as it is on my own local network, security measures should still be in place as a good practice.
           <ul>
+            <li>Using key based authentication instead of passwords, as these cannot be as easily stolen/brute forced.</li>
+            <li>Installing "Fail2ban", this is a tool that bans IP addresses that show malicious behaviours like too many password attempts.</li>
+            <li>Configuring a firewall using the <code>ufw</code> command, only allowing necessary ports for SSH and HTTP(S).</li>
             <li></li>
           </ul>
         </p>
