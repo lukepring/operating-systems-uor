@@ -275,9 +275,11 @@ tmpfs           196M   12K  196M   1% /run/user/1000
         <p>
           My threat model will identify three security threats and propose mitigation strategies for them. <br><br>
           <ol>
-            <li>My 1<sup>st</sup> threat to consider would be <b>Unauthorised Access</b>. The mitigation for this would be to use strong passwords,
+            <li><b>Unauthorised Access:</b> The mitigation for this would be to use strong passwords,
             or to use the key-based authentication that I mentioned above. This would prevent access to the server VM from bad actors.</li>
-            <li></li>
+            <li><b>Malware/Ransomware:</b> If malware is unknowingly installed on the system, data could be stolen or the system could
+            cease functioning, meaning that my coursework would be disrupted. Mitigation for this includes enabling <code>unattended-upgrades</code> (as mentioned above), and potentially installing an antivirus scanner. I will also make regular
+            backups of the virtual machine, saving its state at each stage so that I can rollback at any time.</li>
           </ol>
         </p>
       </section>
