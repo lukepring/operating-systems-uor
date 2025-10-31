@@ -245,7 +245,15 @@ tmpfs           196M   12K  196M   1% /run/user/1000
           In my performance testing plan, I will monitor my server VM's metrics to ensure system stability, and collect data 
           for capacity planning.<br><br>
           For remote monitoring, I will use the <code>htop</code> tool to view processes running, <code>iostat</code> to see CPU statistics, 
-          <code>netstat</code> to view current network connections and bandwidth usage, and <code>vmstat</code> to see how much virtual memory is being used, so I can increase the "physical" memory if required.
+          <code>netstat</code> to view current network connections and bandwidth usage, and <code>vmstat</code> to see how much virtual memory is being used, so I can increase the "physical" memory if required.<br><br>
+          Key performance indicators (KPIs) I will track will include:
+          <ul>
+            <li>CPU Utilisation</li>
+            <li>Memory Usage</li>
+            <li>Disk I/O</li>
+            <li>Network Throughput</li>
+          </ul>
+          From these tests, I would like to determine how certain stresses affect response time through SSH. I could use stress testing tools such as <code>stress-ng</code> and <code>sysbench</code>.
         </p>
       </section>
 
