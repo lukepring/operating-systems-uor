@@ -308,7 +308,7 @@ tmpfs           196M   12K  196M   1% /run/user/1000
           <h2 id="planning-title">Application Selection for Performance Testing</h2>
           <div class="meta">14/11/2025</div>
 
-          <h3>Application Selection Matrix</h3>
+          <h3>Application Selection Matrix & Installation Commands/Documentation</h3>
         <p>
           <table>
             <tr>
@@ -322,6 +322,21 @@ tmpfs           196M   12K  196M   1% /run/user/1000
               <td><code>sudo apt install -y stress-ng</code></td>
               <td>Produces synthetic CPU stress tests using multiple threads to test whole processor performance.</td>
               <td>Good for controlled benchmarking of CPU performance. Gives consistent results and is very customisable.</td>
+            </tr>
+            <tr>
+              <td>RAM Workload</td>
+              <td><code>sudo apt install -y stress-ng</code></td>
+              <td>Allocates and stressed RAM through consistent methods.</td>
+              <td>The tool will already be installed for the CPU benchmark, so it is efficient to use the same tool. Simple to script for repeatable, consistent tests.</td>
+            </tr>
+            <tr>
+              <td>I/O Benchmark</td>
+              <td><code>sudo apt install -y fio</code></td>
+              <td>fio is a professional grade storage benchmarking tool that simulates reads and writes.</td>
+              <td>Highly configurable and industry standard for storage testing, meaning any results I get from this benchmark will be of good quality.</td>
+            </tr>
+            <tr>
+              <td>Networking Benchmark</td>
             </tr>
           </table>
         </p>
