@@ -311,10 +311,18 @@ tmpfs           196M   12K  196M   1% /run/user/1000
           <h3>Application Selection Matrix</h3>
         <p>
           <table>
-            <th>Workload Type</th>
+            <tr>
+              <th>Workload Type</th>
             <th>Application</th>
             <th>Description</th>
             <th>Justification</th>
+            </tr>
+            <tr>
+              <td>CPU Workload</td>
+              <td><code>sudo apt install -y stress-ng</code></td>
+              <td>Produces synthetic CPU stress tests using multiple threads to test whole processor performance.</td>
+              <td>Good for controlled benchmarking of CPU performance. Gives consistent results and is very customisable.</td>
+            </tr>
           </table>
         </p>
       </section>
