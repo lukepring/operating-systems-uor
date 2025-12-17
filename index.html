@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -20,7 +21,8 @@
       line-height: 1.6;
     }
 
-    html, body {
+    html,
+    body {
       height: 100%;
       margin: 0;
       background-color: var(--bg);
@@ -77,6 +79,7 @@
       border-radius: var(--radius);
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
       margin-bottom: 16px;
+      overflow-x: scroll;
     }
 
     .diagram {
@@ -90,7 +93,7 @@
       height: auto;
       border-radius: 8px;
       border: 1px solid #2d333b;
-      background: #0d1117;    
+      background: #0d1117;
     }
 
     p {
@@ -126,39 +129,48 @@
     }
 
     pre {
-      overflow-x:auto;
+      overflow-x: auto;
       border-radius: 8px;
       border: 1px solid #2d333b;
-      background: #0d1117;    
+      background: #0d1117;
     }
 
     table {
-  width: 100%;
-  border-collapse: collapse;
-}
+      width: 100%;
+      border-collapse: collapse;
+    }
 
-th, td {
-  padding: 10px 14px;
-  border: 1px solid #2e343b; /* subtle dark border */
-}
+    th,
+    td {
+      padding: 10px 14px;
+      border: 1px solid #2e343b;
+      /* subtle dark border */
+    }
 
-th {
-  background: #161b22;
-  color: var(--text);
-}
+    th {
+      background: #161b22;
+      color: var(--text);
+    }
 
-td {
-  background: #0d1117;
-}
+    td {
+      background: #0d1117;
+    }
 
 
     /* Responsive tweaks */
     @media (max-width:560px) {
-      .wrapper { padding: 16px; margin: 20px auto; }
-      h1 { font-size: 22px; }
+      .wrapper {
+        padding: 16px;
+        margin: 20px auto;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="wrapper" role="main">
     <header>
@@ -176,46 +188,61 @@ td {
 
         <h3>System Architecture Diagram</h3>
         <div class="diagram">
-          <img alt="System Architecture Diagram" src="https://raw.githubusercontent.com/lukepring/operating-systems-uor/refs/heads/main/Config%20Diagram.png">
+          <img alt="System Architecture Diagram"
+            src="https://raw.githubusercontent.com/lukepring/operating-systems-uor/refs/heads/main/Config%20Diagram.png">
         </div>
 
         <h3>Distribution Selection Justification</h3>
         <p>
-          I chose to use the ARM64 version of Ubuntu Server. This is widely adopted in enterprise for good reason, as it offers a balance of stability and usability.
-          This is important as it would be my first time configuring a Linux server. Ubuntu Server is easy to use, offering strong documentation and simple package management
+          I chose to use the ARM64 version of Ubuntu Server. This is widely adopted in enterprise for good reason, as it
+          offers a balance of stability and usability.
+          This is important as it would be my first time configuring a Linux server. Ubuntu Server is easy to use,
+          offering strong documentation and simple package management
           for additional software that may be needed for future tasks of the coursework.
         </p>
         <p>
-          This is in comparison to CentOS Stream, another server distribution which requires more manual configuration for installing software packages.
-          Another distribution I considered was Debian, a popular and stable operating system. However, I decided against using Debian as it is less up-to-date,
-          as it has a slower release cycle. In addition, Debian requires more configuration for security, while Ubuntu Server is more automated, speeding up the time
+          This is in comparison to CentOS Stream, another server distribution which requires more manual configuration
+          for installing software packages.
+          Another distribution I considered was Debian, a popular and stable operating system. However, I decided
+          against using Debian as it is less up-to-date,
+          as it has a slower release cycle. In addition, Debian requires more configuration for security, while Ubuntu
+          Server is more automated, speeding up the time
           it will take to set up my VM.
         </p>
         <p>
-          Ubuntu Server is also clearly the best option due to its simple and guided installation process, which is intuitive and requires less manual setup and knowledge to get started.
-          It is designed to be accessible for new Linux users, with beginner-friendly documentation and simple package management. This is in contrast to CentOS Stream or Debian,
+          Ubuntu Server is also clearly the best option due to its simple and guided installation process, which is
+          intuitive and requires less manual setup and knowledge to get started.
+          It is designed to be accessible for new Linux users, with beginner-friendly documentation and simple package
+          management. This is in contrast to CentOS Stream or Debian,
           which require more configuration knowledge with their more complex setup processes.
         </p>
         <p>
-          These distributions are more geared towards experienced server administrators, and require more learning than would be possible during the timescale of the coursework.
+          These distributions are more geared towards experienced server administrators, and require more learning than
+          would be possible during the timescale of the coursework.
         </p>
 
         <h3>Workstation Configuration</h3>
         <p>
-          My workstation is a MacBook Pro with the macOS Tahoe (version 26) operating system installed. This is my primary device, and is good for virtualisation due to the Apple Silicon ARM architect[...]
-          and Apple’s virtualisation and hypervisor frameworks. Due to said CPU architecture, the version of Ubuntu Server I have to install will have to be the ARM64 build due to the performance is[...]
+          My workstation is a MacBook Pro with the macOS Tahoe (version 26) operating system installed. This is my
+          primary device, and is good for virtualisation due to the Apple Silicon ARM architect[...]
+          and Apple’s virtualisation and hypervisor frameworks. Due to said CPU architecture, the version of Ubuntu
+          Server I have to install will have to be the ARM64 build due to the performance is[...]
           another CPU architecture would introduce.
         </p>
         <p>
-          macOS is part of the UNIX family of operating systems, which has many similarities with Linux. This reduces compatibility issues as a lot of the kernel level features are the same,
-          meaning the virtualised server will be more stable and performant. UNIX-based hosts such as macOS also come with Linux tools such as built-in SSH via the Terminal, which means connecting
+          macOS is part of the UNIX family of operating systems, which has many similarities with Linux. This reduces
+          compatibility issues as a lot of the kernel level features are the same,
+          meaning the virtualised server will be more stable and performant. UNIX-based hosts such as macOS also come
+          with Linux tools such as built-in SSH via the Terminal, which means connecting
           to the server will be easier, not requiring the installation of PuTTY like on Windows hosts.
         </p>
 
         <h3>Network Configuration</h3>
-        <p>When configuring the network connection between my server VM and my workstation, I will use the "Bridged Adapter" option within VirtualBox to ensure the server VM is hosted on the same netw[...]
-          connects the guest network interface to the host's, appearing as a seperate device on the local network. 
-          This allows connection to the guest machine via SSH without requiring port forwarding or NAT to be configured. This means that the server VM can be connected to from the local machine with a[...]
+        <p>When configuring the network connection between my server VM and my workstation, I will use the "Bridged
+          Adapter" option within VirtualBox to ensure the server VM is hosted on the same netw[...]
+          connects the guest network interface to the host's, appearing as a seperate device on the local network.
+          This allows connection to the guest machine via SSH without requiring port forwarding or NAT to be configured.
+          This means that the server VM can be connected to from the local machine with a[...]
 
         <h3>System Specifications</h3>
         <p>The specifications of my server VM are as follows:
@@ -224,7 +251,8 @@ td {
           <li><b>Total Memory:</b> 1954MB</li>
           <li><b>Free Memory (idle):</b> 1579MB</li>
           <li><b>Buff/Cache Memory:</b> 216MB</li>
-          <li><b>df -h: </b><br><pre><code>
+          <li><b>df -h: </b><br>
+            <pre><code>
             Filesystem      Size  Used Avail Use% Mounted on
 tmpfs           196M 1004K  195M   1% /run
 efivarfs        256K   16K  241K   6% /sys/firmware/efi/efivars
@@ -235,7 +263,8 @@ tmpfs           5.0M     0  5.0M   0% /run/lock
 tmpfs           196M   12K  196M   1% /run/user/1000
           </code></pre>
           </li>
-          <li><b>ip addr: </b><br><pre><code>
+          <li><b>ip addr: </b><br>
+            <pre><code>
             1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -252,117 +281,153 @@ tmpfs           196M   12K  196M   1% /run/user/1000
        valid_lft 2591731sec preferred_lft 604531sec
     inet6 fe80::a00:27ff:fea5:201c/64 scope link 
        valid_lft forever preferred_lft forever
-          </code></pre></li>
+          </code></pre>
+          </li>
           <li><b>lsb_release: </b>No LSB modules are available.</li>
         </ul>
-        I used the <code>uname</code>, <code>free</code>, <code>df -h</code>, <code>ip addr</code>, and <code>lsb_release</code> commands to provide the above system specifications.
+        I used the <code>uname</code>, <code>free</code>, <code>df -h</code>, <code>ip addr</code>, and
+        <code>lsb_release</code> commands to provide the above system specifications.
         </p>
       </section>
 
       <section class="card" aria-labelledby="planning-title">
-          <h2 id="planning-title">Security Planning and Testing Methodology</h2>
-          <div class="meta">31/10/2025 🎃</div>
+        <h2 id="planning-title">Security Planning and Testing Methodology</h2>
+        <div class="meta">31/10/2025 🎃</div>
 
-          <h3>Performance Testing Plan</h3>
+        <h3>Performance Testing Plan</h3>
         <p>
-          In my performance testing plan, I will monitor my server VM's metrics to ensure system stability, and collect data 
+          In my performance testing plan, I will monitor my server VM's metrics to ensure system stability, and collect
+          data
           for capacity planning.<br><br>
-          For remote monitoring, I will use the <code>htop</code> tool to view processes running, <code>iostat</code> to see CPU statistics, 
-          <code>netstat</code> to view current network connections and bandwidth usage, and <code>vmstat</code> to see how much virtual memory is being used, so I can increase the "physical" memory if[...]
+          For remote monitoring, I will use the <code>htop</code> tool to view processes running, <code>iostat</code> to
+          see CPU statistics,
+          <code>netstat</code> to view current network connections and bandwidth usage, and <code>vmstat</code> to see
+          how much virtual memory is being used, so I can increase the "physical" memory if[...]
           Key performance indicators (KPIs) I will track will include:
-          <ul>
-            <li>CPU Utilisation</li>
-            <li>Memory Usage</li>
-            <li>Disk I/O</li>
-            <li>Network Throughput</li>
-          </ul>
-          From these tests, I would like to determine how certain stresses affect response time through SSH. I could use stress testing tools such as <code>stress-ng</code> and <code>sysbench</code>.
+        <ul>
+          <li>CPU Utilisation</li>
+          <li>Memory Usage</li>
+          <li>Disk I/O</li>
+          <li>Network Throughput</li>
+        </ul>
+        From these tests, I would like to determine how certain stresses affect response time through SSH. I could use
+        stress testing tools such as <code>stress-ng</code> and <code>sysbench</code>.
         </p>
         <h3>Security Configuration Checklist</h3>
         <p>
-          I will edit the SSH configuration file editing various settings to ensure the security of my VM instance. While the risk of attack is low as it is on my own local network, security measures [...]
-          <ul>
-            <li>Using key based authentication instead of passwords, as these cannot be as easily stolen/brute forced.</li>
-            <li>Installing "Fail2ban", this is a tool that bans IP addresses that show malicious behaviours like too many password attempts.</li>
-            <li>Configuring a firewall using the <code>ufw</code> command, only allowing necessary ports for SSH and HTTP(S).</li>
-            <li>Enable <code>unattended-upgrades</code> to automatically install security updates.</li>
-            <li>I could scan for open ports that don't need to be open, to tighten security.</li>
-          </ul>
+          I will edit the SSH configuration file editing various settings to ensure the security of my VM instance.
+          While the risk of attack is low as it is on my own local network, security measures [...]
+        <ul>
+          <li>Using key based authentication instead of passwords, as these cannot be as easily stolen/brute forced.
+          </li>
+          <li>Installing "Fail2ban", this is a tool that bans IP addresses that show malicious behaviours like too many
+            password attempts.</li>
+          <li>Configuring a firewall using the <code>ufw</code> command, only allowing necessary ports for SSH and
+            HTTP(S).</li>
+          <li>Enable <code>unattended-upgrades</code> to automatically install security updates.</li>
+          <li>I could scan for open ports that don't need to be open, to tighten security.</li>
+        </ul>
         </p>
         <h3>Security Threat Model</h3>
         <p>
           My threat model will identify three security threats and propose mitigation strategies for them. <br>
-          <ol>
-            <li><b>Unauthorised Access:</b> The mitigation for this would be to use strong passwords,
-            or to use the key-based authentication that I mentioned above. This would prevent access to the server VM from bad actors.</li>
-            <li><b>Malware/Ransomware:</b> If malware is unknowingly installed on the system, data could be stolen or the system could
-            cease functioning, meaning that my coursework would be disrupted. Mitigation for this includes enabling <code>unattended-upgrades</code> (as mentioned above), and potentially installing an[...]
-            backups of the virtual machine, saving its state at each stage so that I can rollback at any time.</li>
-            <li><b>Denial of Service (DoS) Attacks: </b>Fail2ban and firewall configuration can be used to prevent an attacker flooding my system
-            with malicious traffic which would prevent me from working. In addition, I could configure rate limiting preventing an influx of requests fron a single IP address.</li>
-          </ol>
+        <ol>
+          <li><b>Unauthorised Access:</b> The mitigation for this would be to use strong passwords,
+            or to use the key-based authentication that I mentioned above. This would prevent access to the server VM
+            from bad actors.</li>
+          <li><b>Malware/Ransomware:</b> If malware is unknowingly installed on the system, data could be stolen or the
+            system could
+            cease functioning, meaning that my coursework would be disrupted. Mitigation for this includes enabling
+            <code>unattended-upgrades</code> (as mentioned above), and potentially installing an[...]
+            backups of the virtual machine, saving its state at each stage so that I can rollback at any time.
+          </li>
+          <li><b>Denial of Service (DoS) Attacks: </b>Fail2ban and firewall configuration can be used to prevent an
+            attacker flooding my system
+            with malicious traffic which would prevent me from working. In addition, I could configure rate limiting
+            preventing an influx of requests fron a single IP address.</li>
+        </ol>
         </p>
       </section>
 
       <section class="card" aria-labelledby="planning-title">
-          <h2 id="planning-title">Application Selection for Performance Testing</h2>
-          <div class="meta">14/11/2025</div>
+        <h2 id="planning-title">Application Selection for Performance Testing</h2>
+        <div class="meta">14/11/2025</div>
 
-          <h3>Application Selection Matrix & Installation Commands/Documentation</h3>
+        <h3>Application Selection Matrix & Installation Commands/Documentation</h3>
         <p>
-          <table>
-            <tr>
-              <th>Workload Type</th>
+        <table>
+          <tr>
+            <th>Workload Type</th>
             <th>Application Install Command</th>
             <th>Description</th>
             <th>Justification</th>
-            </tr>
-            <tr>
-              <td>CPU Workload</td>
-              <td><code>sudo apt install -y stress-ng</code></td>
-              <td>Produces synthetic CPU stress tests using multiple threads to test whole processor performance.</td>
-              <td>Good for controlled benchmarking of CPU performance. Gives consistent results and is very customisable.</td>
-            </tr>
-            <tr>
-              <td>RAM Workload</td>
-              <td><code>sudo apt install -y stress-ng</code></td>
-              <td>Allocates and stressed RAM through consistent methods.</td>
-              <td>The tool will already be installed for the CPU benchmark, so it is efficient to use the same tool. Simple to script for repeatable, consistent tests.</td>
-            </tr>
-            <tr>
-              <td>I/O Benchmark</td>
-              <td><code>sudo apt install -y fio</code></td>
-              <td>fio is a professional grade storage benchmarking tool that simulates reads and writes.</td>
-              <td>Highly configurable and industry standard for storage testing, meaning any results I get from this benchmark will be of good quality.</td>
-            </tr>
-            <tr>
-              <td>Networking Benchmark</td>
-              <td><code>sudo apt install -y iperf3</code></td>
-              <td>A widely used network performance tester. Important for a server.</td>
-              <td>Provides clean measureable data. Perfect for bandwidth and latency tests.</td>
-            </tr>
-          </table>
+          </tr>
+          <tr>
+            <td>CPU Workload</td>
+            <td><code>sudo apt install -y stress-ng</code></td>
+            <td>Produces synthetic CPU stress tests using multiple threads to test whole processor performance.</td>
+            <td>Good for controlled benchmarking of CPU performance. Gives consistent results and is very customisable.
+            </td>
+          </tr>
+          <tr>
+            <td>RAM Workload</td>
+            <td><code>sudo apt install -y stress-ng</code></td>
+            <td>Allocates and stressed RAM through consistent methods.</td>
+            <td>The tool will already be installed for the CPU benchmark, so it is efficient to use the same tool.
+              Simple to script for repeatable, consistent tests.</td>
+          </tr>
+          <tr>
+            <td>I/O Benchmark</td>
+            <td><code>sudo apt install -y fio</code></td>
+            <td>fio is a professional grade storage benchmarking tool that simulates reads and writes.</td>
+            <td>Highly configurable and industry standard for storage testing, meaning any results I get from this
+              benchmark will be of good quality.</td>
+          </tr>
+          <tr>
+            <td>Networking Benchmark</td>
+            <td><code>sudo apt install -y iperf3</code></td>
+            <td>A widely used network performance tester. Important for a server.</td>
+            <td>Provides clean measureable data. Perfect for bandwidth and latency tests.</td>
+          </tr>
+        </table>
         </p>
 
         <h3>Expected Resource Profiles</h3>
         <p>Based on the selected applications, I anticipate the following resource behaviors:</p>
         <ul>
-          <li><b>CPU Tests:</b> The <code>stress-ng</code> CPU stressors should drive user-space CPU utilization to near 100%. I expect to see the system load average rise significantly above the number of available cores (which is 2 in this VM). This will verify if the virtual CPU allocation is sufficient for high-demand tasks.</li>
-          <li><b>Memory Tests:</b> RAM stressors will rapidly consume available memory. I anticipate seeing the "free" memory drop close to zero. If the stressor exceeds physical RAM (approx 2GB), I expect to see swap usage ("si" and "so" columns in vmstat) increase, resulting in degraded system responsiveness.</li>
-          <li><b>I/O Tests:</b> The <code>fio</code> benchmarks will saturate the virtual disk controller. I expect high read/write throughput and a notable spike in "iowait" percentages during heavy random access tests, which will help benchmark the underlying storage performance.</li>
-          <li><b>Network Tests:</b> <code>iperf3</code> should saturate the virtual network adapter. I expect to see consistent throughput matching the provisioned bandwidth of the bridged adapter, potentially reaching gigabit speeds on the local network.</li>
+          <li><b>CPU Tests:</b> The <code>stress-ng</code> CPU stressors should drive user-space CPU utilization to near
+            100%. I expect to see the system load average rise significantly above the number of available cores (which
+            is 2 in this VM). This will verify if the virtual CPU allocation is sufficient for high-demand tasks.</li>
+          <li><b>Memory Tests:</b> RAM stressors will rapidly consume available memory. I anticipate seeing the "free"
+            memory drop close to zero. If the stressor exceeds physical RAM (approx 2GB), I expect to see swap usage
+            ("si" and "so" columns in vmstat) increase, resulting in degraded system responsiveness.</li>
+          <li><b>I/O Tests:</b> The <code>fio</code> benchmarks will saturate the virtual disk controller. I expect high
+            read/write throughput and a notable spike in "iowait" percentages during heavy random access tests, which
+            will help benchmark the underlying storage performance.</li>
+          <li><b>Network Tests:</b> <code>iperf3</code> should saturate the virtual network adapter. I expect to see
+            consistent throughput matching the provisioned bandwidth of the bridged adapter, potentially reaching
+            gigabit speeds on the local network.</li>
         </ul>
 
         <h3>Monitoring Strategy</h3>
         <p>
-          To effectively capture performance data during these tests, I will employ a "split-terminal" strategy using two simultaneous SSH connections:
+          To effectively capture performance data during these tests, I will employ a "split-terminal" strategy using
+          two simultaneous SSH connections:
         </p>
         <ol>
-          <li><b>Terminal A (Load Generator):</b> This session will execute the benchmark commands (e.g., <code>stress-ng</code> or <code>fio</code>).</li>
-          <li><b>Terminal B (Monitor):</b> This session will run real-time monitoring tools. I will use <code>htop</code> for a visual overview of processes and <code>vmstat 1</code> to capture second-by-second granular data on memory, swap, and CPU activity.</li>
+          <li><b>Terminal A (Load Generator):</b> This session will execute the benchmark commands (e.g.,
+            <code>stress-ng</code> or <code>fio</code>).
+          </li>
+          <li><b>Terminal B (Monitor):</b> This session will run real-time monitoring tools. I will use
+            <code>htop</code> for a visual overview of processes and <code>vmstat 1</code> to capture second-by-second
+            granular data on memory, swap, and CPU activity.
+          </li>
         </ol>
         <p>
-          For the final report, I will pipe the output of the monitoring tools to log files (e.g., <code>vmstat 1 > cpu_test_log.txt</code>) to generate graphs. I will also verify system stability by checking <code>dmesg</code> or <code>/var/log/syslog</code> for any kernel errors or OOM (Out of Memory) killer events that may occur during the stress tests.
+          For the final report, I will pipe the output of the monitoring tools to log files (e.g.,
+          <code>vmstat 1 > cpu_test_log.txt</code>) to generate graphs. I will also verify system stability by checking
+          <code>dmesg</code> or <code>/var/log/syslog</code> for any kernel errors or OOM (Out of Memory) killer events
+          that may occur during the stress tests.
         </p>
       </section>
 
@@ -373,9 +438,11 @@ tmpfs           196M   12K  196M   1% /run/user/1000
         <h3>Configuring SSH with key-based authentication</h3>
         <p>I started by generating an ed25519 key pair with my student email on my workstation.</p>
         <div class="diagram">
-        <img src="https://raw.githubusercontent.com/lukepring/operating-systems-uor/refs/heads/main/Keygen%20Screenshot%20Cat.png">
+          <img
+            src="https://raw.githubusercontent.com/lukepring/operating-systems-uor/refs/heads/main/Keygen%20Screenshot%20Cat.png">
         </div>
-        <p>After this, I copied the key to the server using the <code>ssh-copy-id</code> command. I had to specify the SSH port by using the <code>-p</code> flag. The result from entering this command was:</p>
+        <p>After this, I copied the key to the server using the <code>ssh-copy-id</code> command. I had to specify the
+          SSH port by using the <code>-p</code> flag. The result from entering this command was:</p>
         <pre>
           <code>
 /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/Users/lukepring/.ssh/id_ed25519.pub"
@@ -386,16 +453,32 @@ luke@127.0.0.1's password:
 Number of key(s) added:        1
           </code>
         </pre>
-        <p>Below is a screenshot displaying a passwordless login using the key I generated. The passphrase for the key is stored in the keychain on my Mac.</p>
+        <p>Below is a screenshot displaying a passwordless login using the key I generated. The passphrase for the key
+          is stored in the keychain on my Mac.</p>
         <div class="diagram">
-        <img src="Passwordless Login.png">
+          <img src="Passwordless Login.png">
         </div>
+        <p>To harden my SSH configuration, I first backed up my initial configuration file using the <code>cp</code>
+          command. Then, I edited the configuration file using <code>sudo nano /etc/ssh/sshd_config</code>. I
+          uncommented the PasswordAuthentication line and set it to no. I also uncommented the PubkeyAuthentication line
+          and set it to yes. I then restarted the SSH service using <code>sudo systemctl restart sshd</code>.</p>
+        <div class="diagram">
+          <img src="SSH Harden 1.png">
+        </div>
+        <div class="diagram">
+          <img src="SSH Harden 2.png">
+        </div>
+        <p>These changes improve security by removing the ability to authenticate with a password, which is less secure
+          as it can be easily brute forced, and passwords can be potentially stolen.</p>
+        <p>In addition, disabling root login improves security by reducing the attack surface, since hackers can no
+          longer target the root account which is fully privileged.</p>
+        <p></p>
         <h3>Configuring a firewall permitting SSH from one specific workstation only</h3>
 
         <h3>Managing users and implement privilege management, creating a non-root administrative user</h3>
 
         <h3>Configuration Files with before and after comparisons</h3>
-        
+
       </section>
 
       <section class="card" aria-labelledby="planning-title">
@@ -411,16 +494,19 @@ Number of key(s) added:        1
         <h3>Creating a security baseline verification script that verifies security configurations</h3>
 
         <h3>Creating a remote monitoring script to collect performance metrics</h3>
-        
+
       </section>
-      
+
       <footer>
 
-        <a href="https://github.com/lukepring/operating-systems-uor" target="_blank" rel="noopener">operating-systems-uor</a> is maintained by <a href="https://github.com/lukepring" target="_blank" rel="noopener">Luke Pring</a>.<br>
-        <img src="https://cdn.lukepring.co.uk/uor/Logo.webp" alt="alt text" width="200"/><br>
+        <a href="https://github.com/lukepring/operating-systems-uor" target="_blank"
+          rel="noopener">operating-systems-uor</a> is maintained by <a href="https://github.com/lukepring"
+          target="_blank" rel="noopener">Luke Pring</a>.<br>
+        <img src="https://cdn.lukepring.co.uk/uor/Logo.webp" alt="alt text" width="200" /><br>
 
       </footer>
     </main>
   </div>
 </body>
+
 </html>
