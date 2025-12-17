@@ -224,10 +224,10 @@
         <h3>Workstation Configuration</h3>
         <p>
           My workstation is a MacBook Pro with the macOS Tahoe (version 26) operating system installed. This is my
-          primary device, and is good for virtualisation due to the Apple Silicon ARM architect[...]
-          and Apple’s virtualisation and hypervisor frameworks. Due to said CPU architecture, the version of Ubuntu
-          Server I have to install will have to be the ARM64 build due to the performance is[...]
-          another CPU architecture would introduce.
+          primary device, and is good for virtualisation due to the Apple Silicon ARM architecture and Apple’s
+          virtualisation and hypervisor frameworks.
+          Due to said CPU architecture, the version of Ubuntu Server I have to install will have to be the ARM64 build
+          due to the performance issues that would be introduced.
         </p>
         <p>
           macOS is part of the UNIX family of operating systems, which has many similarities with Linux. This reduces
@@ -239,10 +239,11 @@
 
         <h3>Network Configuration</h3>
         <p>When configuring the network connection between my server VM and my workstation, I will use the "Bridged
-          Adapter" option within VirtualBox to ensure the server VM is hosted on the same netw[...]
-          connects the guest network interface to the host's, appearing as a seperate device on the local network.
+          Adapter" option within VirtualBox to ensure the server VM is hosted on the same network as my workstation.
+          This connects the guest network interface to the host's, appearing as a seperate device on the local network.
           This allows connection to the guest machine via SSH without requiring port forwarding or NAT to be configured.
-          This means that the server VM can be connected to from the local machine with a[...]
+          This means that the server VM can be connected to from the local machine with a simple SSH connection.
+        </p>
 
         <h3>System Specifications</h3>
         <p>The specifications of my server VM are as follows:
@@ -302,7 +303,7 @@ tmpfs           196M   12K  196M   1% /run/user/1000
           For remote monitoring, I will use the <code>htop</code> tool to view processes running, <code>iostat</code> to
           see CPU statistics,
           <code>netstat</code> to view current network connections and bandwidth usage, and <code>vmstat</code> to see
-          how much virtual memory is being used, so I can increase the "physical" memory if[...]
+          how much virtual memory is being used, so I can increase the "physical" memory if required.
           Key performance indicators (KPIs) I will track will include:
         <ul>
           <li>CPU Utilisation</li>
@@ -316,7 +317,8 @@ tmpfs           196M   12K  196M   1% /run/user/1000
         <h3>Security Configuration Checklist</h3>
         <p>
           I will edit the SSH configuration file editing various settings to ensure the security of my VM instance.
-          While the risk of attack is low as it is on my own local network, security measures [...]
+          While the risk of attack is low as it is on my own local network, security measures are still implemented to
+          follow best practice.
         <ul>
           <li>Using key based authentication instead of passwords, as these cannot be as easily stolen/brute forced.
           </li>
@@ -338,8 +340,8 @@ tmpfs           196M   12K  196M   1% /run/user/1000
           <li><b>Malware/Ransomware:</b> If malware is unknowingly installed on the system, data could be stolen or the
             system could
             cease functioning, meaning that my coursework would be disrupted. Mitigation for this includes enabling
-            <code>unattended-upgrades</code> (as mentioned above), and potentially installing an[...]
-            backups of the virtual machine, saving its state at each stage so that I can rollback at any time.
+            <code>unattended-upgrades</code> (as mentioned above), and potentially installing an antivirus program.
+            Backups of the virtual machine, saving its state at each stage so that I can rollback at any time.
           </li>
           <li><b>Denial of Service (DoS) Attacks: </b>Fail2ban and firewall configuration can be used to prevent an
             attacker flooding my system
