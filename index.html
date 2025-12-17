@@ -375,7 +375,21 @@ tmpfs           196M   12K  196M   1% /run/user/1000
         <div class="diagram">
         <img src="https://raw.githubusercontent.com/lukepring/operating-systems-uor/refs/heads/main/Keygen%20Screenshot%20Cat.png">
         </div>
+        <p>After this, I copied the key to the server using the <code>ssh-copy-id</code> command. I had to specify the SSH port by using the <code>-p</code> flag. The result from entering this command was:</p>
+        <pre>
+          <code>
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/Users/lukepring/.ssh/id_ed25519.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+luke@127.0.0.1's password: 
 
+Number of key(s) added:        1
+          </code>
+        </pre>
+        <p>Below is a screenshot displaying a passwordless login using the key I generated. The passphrase for the key is stored in the keychain on my Mac.</p>
+        <div class="diagram">
+        <img src="Passwordless Login.png">
+        </div>
         <h3>Configuring a firewall permitting SSH from one specific workstation only</h3>
 
         <h3>Managing users and implement privilege management, creating a non-root administrative user</h3>
