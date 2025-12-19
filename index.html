@@ -624,14 +624,35 @@ Number of key(s) added:        1
           <img src="Fail2Ban 2.png">
         </div>
         <p>After making these changes, I restarted the fail2ban service using the
-          <code>sudo systemctl restart fail2ban</code> command.</p>
+          <code>sudo systemctl restart fail2ban</code> command.
+        </p>
         <p>To verify the service is running, I used the <code>sudo systemctl status fail2ban</code> command. The result
           can be seen below:</p>
         <div class="diagram">
           <img src="Fail2Ban 3.png">
         </div>
+        <p>Fail2ban is now configured to monitor the sshd service and ban IP addresses that are suspected of being
+          malicious.</p>
+        <p>Below is a screenshot showing the monitoring of Fail2Ban:</p>
+        <div class="diagram">
+          <img src="Fail2Ban 4.png">
+        </div>
         <h3>Creating a security baseline verification script that verifies security configurations</h3>
-
+        <p>To create my security baseline script, I used the command <code>nano security-baseline.sh</code> and entered
+          in comprehensive security checks. Below are screenshots showing the script:</p>
+        <div class="diagram">
+          <img src="Security Baseline 1.png">
+        </div>
+        <div class="diagram">
+          <img src="Security Baseline 2.png">
+        </div>
+        <p>After creating the script, I made it executable using the <code>chmod +x security-baseline.sh</code>
+          command.</p>
+        <p>To run the script, I used the <code>./security-baseline.sh</code> command.</p>
+        <p>Below is a screenshot showing the results of the script:</p>
+        <div class="diagram">
+          <img src="Security Baseline 3.png">
+        </div>
         <h3>Creating a remote monitoring script to collect performance metrics</h3>
 
       </section>
