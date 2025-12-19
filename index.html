@@ -654,7 +654,26 @@ Number of key(s) added:        1
           <img src="Security Baseline 3.png">
         </div>
         <h3>Creating a remote monitoring script to collect performance metrics</h3>
-
+        <p>Similar to my last task, I created a remote monitoring script on my <b>workstation</b> using
+          <code>nano monitor-server.sh</code>
+          to collect performance metrics. Below is a screenshot (from macOS nano) showing the script:
+        </p>
+        <div class="diagram">
+          <img src="Remote Monitoring 1.png">
+        </div>
+        <p>After creating the script, I made it executable using the <code>chmod +x monitor-server.sh</code>
+          command.</p>
+        <p>To run the script, I used the <code>./monitor-server.sh</code> command.</p>
+        <p>On my first time running the script, it failed as I hadn't set the SSH port correctly. The script expects to
+          use port 22, which is the default SSH port. However, as I'm using the VirtualBox NAT network, I needed to use
+          port 2222.</p>
+        <p>Below is a screenshot showing the results of the script:</p>
+        <div class="diagram">
+          <img src="Remote Monitoring 2.png">
+        </div>
+        <div class="diagram">
+          <img src="Remote Monitoring 3.png">
+        </div>
       </section>
 
       <footer>
