@@ -551,11 +551,85 @@ Number of key(s) added:        1
         <h2 id="planning-title">Advanced Security and Monitoring Infrastructure</h2>
 
         <h3>Implementing Access Control using SELinux or AppArmor</h3>
-        <p>To</p>
+        <p>To identify which access control system is installed, I used the <code>sudo aa-status</code> command. I
+          thought this would be the best command to try first as AppArmor is a common access control system on Ubuntu,
+          which is the distribution I am using. The command confirmed that AppArmor was installed and running.</p>
+        <p>To examine a specific profile, I used the <code>sudo cat /etc/apparmor.d/usr.bin.tcpdump
+</code> command. This profile is used to control the permissions of the tcpdump program.</p>
+        <p>Below is a screenshot showing the result of this command:</p>
+        <div class="diagram">
+          <img src="AppArmor 1.png">
+        </div>
+        <p>AppArmor is a security module for Linux, commonly used in Ubuntu, that provides a mandatory access control
+          (MAC) system for the Linux kernel. It is a security module that is used to enforce access control policies on
+          the system.</p>
+        <p>Looking at the profile above, I was able to identify the permissions granted to tcpdump. The profile grants
+          the program the network and capability permissions required for raw packet capture, including net_raw and
+          net_admin. It allows controlled read/write access to pcap files, system network information, USB devices, and
+          terminal output, while explicitly denying access to sensitive user files and binaries. This enforces least
+          privilege while allowing tcpdump to operate correctly.</p>
+        <p>I used the following commands to view the profiles in different modes:</p>
+        <pre>
+          <code>
+  sudo aa-status --profiled
+  sudo aa-status --enforced
+  sudo aa-status --complaining</code>
+        </pre>
+        <p>Below is a screenshot showing the results of these commands, showing the number of profiles in each mode.</p>
+        <div class="diagram">
+          <img src="AppArmor 2.png">
+        </div>
+        <p>The difference between enforce and complain mode lies in how they deal with a program performing unauthorised
+          actions. In enforce mode, AppArmor will deny the action and log a message. In complain mode, AppArmor will
+          allow the action and log a message.</p>
         <h3>Configuring automatic security updates</h3>
-
+        <p>To configure automatic security updates, I first installed the unattended-upgrades package using the
+          <code>sudo apt install unattended-upgrades</code> command.
+        </p>
+        <p>Then, I configured the package manager to automatically update packages using the
+          <code>sudo dpkg-reconfigure -plow unattended-upgrades</code> command.
+        </p>
+        <p>Below is a screenshot showing the results of these commands:</p>
+        <div class="diagram">
+          <img src="Unattended Upgrades 1.png">
+        </div>
+        <p>Below is a screenshot showing the dpkg-reconfigure command:</p>
+        <div class="diagram">
+          <img src="Unattended Upgrades 2.png">
+        </div>
+        <p>To verify the service is running, I used the <code>sudo systemctl status unattended-upgrades</code> command.
+          It returned <code>active (running)</code>.</p>
+        <p>To view the configuration of unattended upgrades, I used the
+          <code>sudo cat /etc/apt/apt.conf.d/50unattended-upgrades</code> command.
+        </p>
+        <p>An update log can be viewed using the
+          <code>sudo cat /var/log/unattended-upgrades/unattended-upgrades.log</code> command.
+        </p>
         <h3>Configuring fail2ban for enhanced intrusion detection</h3>
-
+        <p>I first installed fail2ban using the <code>sudo apt install fail2ban</code> command.</p>
+        <p>To ensure the service was running, I used the <code>sudo systemctl status fail2ban</code> command. The result
+          can be seen below:</p>
+        <div class="diagram">
+          <img src="Fail2Ban 1.png">
+        </div>
+        <p>Fail2ban is a security tool that monitors log files and bans IP addresses that are suspected of being
+          malicious. It can be configured to monitor different types of log files and can be used to block
+          suspicious activity.</p>
+        <p>To create a local configuration file, I used the command
+          <code>sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local</code>
+        </p>
+        <p>And then edited the config using the <code>sudo nano /etc/fail2ban/jail.local</code> command. Below is a
+          sceeenshot showing the configuration changes I made to the sshd section of the file:</p>
+        <div class="diagram">
+          <img src="Fail2Ban 2.png">
+        </div>
+        <p>After making these changes, I restarted the fail2ban service using the
+          <code>sudo systemctl restart fail2ban</code> command.</p>
+        <p>To verify the service is running, I used the <code>sudo systemctl status fail2ban</code> command. The result
+          can be seen below:</p>
+        <div class="diagram">
+          <img src="Fail2Ban 3.png">
+        </div>
         <h3>Creating a security baseline verification script that verifies security configurations</h3>
 
         <h3>Creating a remote monitoring script to collect performance metrics</h3>
